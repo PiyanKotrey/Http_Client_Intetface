@@ -1,18 +1,21 @@
-package com.example.http_client.api;
+package com.example.http_client.api.user;
 
+import com.example.http_client.api.user.User;
+import com.example.http_client.api.user.UserClient;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
 
 @RestController
+
 public class UserController {
     private final UserClient userClient;
 
     public UserController(UserClient userClient) {
         this.userClient = userClient;
     }
+
 
     @GetMapping("/user")
     public Flux<User> getAllUser(){
